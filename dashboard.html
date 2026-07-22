@@ -281,7 +281,7 @@ body.view-main .tab-letter{display:none}
       <div class="slbl">등록 방법 & 주의사항</div>
       <div class="nrow"><span class="nicon">🌐</span><span class="ntxt"><b>등록 사이트</b> — APAA KOREA (apaakorea.or.kr). APAA 멤버 / AOP / AFP 등 유형 구분 확인 후 등록</span></div>
       <div class="nrow"><span class="nicon">🗺️</span><span class="ntxt"><b>Excursion 주의</b> — 등록 시 Excursion 함께 등록. 참석자에게 충분한 정보 제공 후 선택·등록 안내 필수</span></div>
-      <div class="nrow"><span class="nicon">💰</span><span class="ntxt"><b>비용 절감</b> — 얼리버드 기간 등록 시 저렴. 확정 즉시 경리팀 안호선 차장님께 결제 요청 및 비즈메카 전자결재 기안 필수</span></div>
+      <div class="nrow"><span class="nicon">💰</span><span class="ntxt"><b>비용 절감</b> — 얼리버드 기간 등록 시 저렴. 확정 즉시 경리팀 담당 차장님께 결제 요청 및 비즈메카 전자결재 기안 필수</span></div>
     </div>
   </div>
 </div>
@@ -1100,7 +1100,7 @@ const manualData={
   m1:{icon:'👔',title:'대표 비서 업무',sections:[
     {key:'daily',title:'📋 데일리 업무',lines:['비즈메카 게시글 확인 (오전 10시)','CILF 접수확인 클릭','Print Letter 확인 (오후 5시)','구글 캘린더 일정 업데이트','대표님 결재 올리기 [결재용]']},
     {key:'trip_approval',title:'✈️ 대표 출장 중 결재',lines:['결재사항 → 비즈메카 게시 후 Gmail(centchang2) 발송','WhatsApp으로 요약보고 (대표님·CRM 채팅방)','형식: 결재기한·담당자·결재명·내용 순','오전 건 → 11:00~11:30, 오후 건 → 17:00~17:30 취합','출장지 밤10시~아침7시 문자·메일 자제']},
-    {key:'card',title:'💳 법인카드 사용',lines:['사용 전 대표님 비즈메카 결재 필수','경리팀 안호선 차장님께 직접 메신저/구두로 요청','사용 후 영수증 경리부 반납 + CILF 미팅마스터 업로드']},
+    {key:'card',title:'💳 법인카드 사용',lines:['사용 전 대표님 비즈메카 결재 필수','경리팀 담당 차장님께 직접 메신저/구두로 요청','사용 후 영수증 경리부 반납 + CILF 미팅마스터 업로드']},
     {key:'newyear',title:'📅 연하장·달력 제작',lines:['11월 셋째 주 시작, 크리스마스 전 발송','문안 작성 → 프루프리딩 → 대표님 컨펌','이미지: Manus AI','다음 연도 공휴일 달력 함께 발송']},
     {key:'accounts',title:'⚠️ 주요 계정',lines:['계정·비밀번호는 파일에 저장하지 않습니다. 사내 보안 문서를 참고하세요.']},
   ]},
@@ -1119,7 +1119,7 @@ const manualData={
     {key:'after',title:'📸 방문 후 처리',lines:['미팅보고서: 1주일 이내 완료, 비즈메카 REPORT 게시','대표님 메모 붉은색 표기, 네모박스 내용 리마인드','명함 수거 → 비서 전달 → CILF 업데이트','CENTRAL 현판 앞 사진 촬영']},
   ]},
   m6:{icon:'🤖',title:'클로드',sections:[
-    {key:'claude',title:'🤖 클로드',lines:['3개월 동안 개인 계정으로 대화','목적: 회사 자동화 시스템 만들기','연습용으로 카페 운영 시스템 만들기 또는 프로젝트 진행 후 결과 도출','금요일부터 시작']},
+    {key:'claude',title:'🤖 클로드',lines:['내용을 입력해주세요.']},
   ]},
 };
 
@@ -2409,7 +2409,7 @@ const defaultMsgData={people:[
   {id:'p_ceo',name:'대표님',messages:[]},
   {id:'p_lawyer',name:'변리사',messages:[]},
   {id:'p_acct',name:'경리팀',messages:[
-    {id:'m_card',title:'카드요청',body:'안녕하세요 차장님, 오늘 당소방문이 있어 황혜경 변리사께서 법인 카드 요청하십니다. 직접 받으러 가면 될까요?'},
+    {id:'m_card',title:'카드요청',body:'안녕하세요 차장님, 법인 카드 요청 관련 문의드립니다. 직접 받으러 가면 될까요?'},
   ]},
   {id:'p_general',name:'총무부',messages:[]},
 ]};
@@ -2813,7 +2813,7 @@ function calArchiveConfirm(){
 }
 
 // ===== 비즈메카 카드 (메시지 전용) =====
-var defaultBizmeca=[{id:'bz1',title:'당소 방문 요청시',body:'비고객(인도)입니다.\n2026년 리셉션 리스트 대상이었으며, 2024·2020 INTA, 2021·2019 AIPPI, 2011년 당소 방문 미팅 기록이 있습니다.\n발신인인 Dr. Rajeshkumar H. Acharya와는 대표님께서 2011년 당소 방문 시 미팅한 기록이 있으며, 이번 방문 예정자인 Dr. Omkar Acharya와 Mr. Anas Qureshi는 최민기 변리사와의 미팅 기록이 있습니다.\n8/3~8/7 중 H K Acharya & Company의 Managing Partner인 Dr. Omkar Acharya와 Foreign Relation Officer인 Mr. Anas Qureshi 두 분이 한국을 방문할 예정이며, 지식재산(IP) 관련 미팅을 요청해 왔습니다.\n구글 캘린더를 확인한 결과, 8/6(목) 오전 10시 전산팀 보고 외에는 별도 일정이 없으신 것으로 확인됩니다.\n미팅 가능 여부와 참석자를 알려주시면, 확인 후 답신 초안을 작성하겠습니다.'}];
+var defaultBizmeca=[{id:'bz1',title:'당소 방문 요청시',body:'비고객(예시)입니다.\n과거 INTA·AIPPI 미팅 및 당소 방문 기록이 있습니다.\n방문 예정자께서 지식재산(IP) 관련 미팅을 요청해 왔습니다.\n구글 캘린더 확인 결과 해당 일정에 별도 일정은 없습니다.\n미팅 가능 여부와 참석자를 알려주시면 확인 후 답신 초안을 작성하겠습니다.'}];
 function loadBizmeca(){var s=localStorage.getItem('crm-bizmeca');var a;try{a=s?JSON.parse(s):null;}catch(e){a=null;}return Array.isArray(a)?a:defaultBizmeca.map(function(x){return Object.assign({},x);});}
 function saveBizmeca(a){localStorage.setItem('crm-bizmeca',JSON.stringify(a));}
 function bzEsc(s){return (s||'').replace(/</g,'&lt;');}
