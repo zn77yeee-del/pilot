@@ -1479,11 +1479,11 @@ function renderTripStatus(){
     const tlHtml=isOpen?'<div style="border-top:0.5px solid #e0e0d8;padding:.875rem 1rem">'+
       '<div style="display:flex;align-items:center;gap:8px;margin-bottom:.75rem;flex-wrap:wrap">'+
       '<label style="font-size:12px;color:#888">출발일</label>'+
-      '<input type="date" id="tdate-'+t.key+'" value="'+(saved||getDateKey())+'" onchange="saveTripDateKey(\''+t.key+'\',this.value)" style="font-size:12px;padding:3px 7px;border:0.5px solid #e0e0d8;border-radius:7px;background:#f5f5f0"/>'+
+      '<input type="date" id="tdate-'+t.key+'" value="'+(saved||getDateKey())+'" onchange="saveTripDateKey(\''+t.key+'\',this.value)" onblur="renderTripStatus()" style="font-size:12px;padding:3px 7px;border:0.5px solid #e0e0d8;border-radius:7px;background:#f5f5f0"/>'+
       '<label style="font-size:12px;color:#888;margin-left:6px">도착일</label>'+
-      '<input type="date" id="adate-'+t.key+'" value="'+(arrived||'')+'" onchange="saveTripArriveKey(\''+t.key+'\',this.value)" style="font-size:12px;padding:3px 7px;border:0.5px solid #e0e0d8;border-radius:7px;background:#f5f5f0"/>'+
-      '<label style="font-size:12px;color:#888;margin-left:6px">도착일</label>'+
-      '<input type="date" id="rdate-'+t.key+'" value="'+(loadTripReturn(t.key)||'')+'" onchange="saveTripReturnKey(\''+t.key+'\',this.value)" style="font-size:12px;padding:3px 7px;border:0.5px solid #e0e0d8;border-radius:7px;background:#f5f5f0"/>'+
+      '<input type="date" id="adate-'+t.key+'" value="'+(arrived||'')+'" onchange="saveTripArriveKey(\''+t.key+'\',this.value)" onblur="renderTripStatus()" style="font-size:12px;padding:3px 7px;border:0.5px solid #e0e0d8;border-radius:7px;background:#f5f5f0"/>'+
+      '<label style="font-size:12px;color:#888;margin-left:6px">귀국일</label>'+
+      '<input type="date" id="rdate-'+t.key+'" value="'+(loadTripReturn(t.key)||'')+'" onchange="saveTripReturnKey(\''+t.key+'\',this.value)" onblur="renderTripStatus()" style="font-size:12px;padding:3px 7px;border:0.5px solid #e0e0d8;border-radius:7px;background:#f5f5f0"/>'+
       '<span id="ddaybadge-'+t.key+'"></span>'+tripSpanBadge(t.key)+'</div>'+
       '<div id="tlcontent-'+t.key+'"><p style="font-size:12px;color:#bbb">출발일을 입력하면 D-day가 자동 계산됩니다.</p></div></div>':'';
 
@@ -1511,7 +1511,7 @@ function loadTripReturn(key){return localStorage.getItem('crm-trip-return-'+key)
 function saveTripReturnKey(key,val){
   if(val)localStorage.setItem('crm-trip-return-'+key,val);
   else localStorage.removeItem('crm-trip-return-'+key);
-  renderTripStatus();
+  // 입력 중 화면 재생성 방지 — 새로고침은 onblur에서 처리
 }
 function tripSpanBadge(key){
   var dep=localStorage.getItem('crm-trip-date-'+key), ret=loadTripReturn(key);
@@ -1526,13 +1526,12 @@ function tripSpanBadge(key){
 function saveTripDateKey(key,val){
   if(!val)return;
   localStorage.setItem('crm-trip-date-'+key,val);
-  renderTripStatus();
-  renderTLForKey(key,val);
+  // 입력 중 화면 재생성 방지 — 새로고침은 onblur에서 처리
 }
 function saveTripArriveKey(key,val){
   if(val)localStorage.setItem('crm-trip-arrive-'+key,val);
   else localStorage.removeItem('crm-trip-arrive-'+key);
-  renderTripStatus();
+  // 입력 중 화면 재생성 방지 — 새로고침은 onblur에서 처리
 }
 
 function renderTLForKey(key,val){
