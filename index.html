@@ -42,7 +42,7 @@ if (typeof window !== "undefined" && !window.storage) {
         } return { keys: out, prefix: prefix || "" }; },
     };
 }
-const ICONS = { "Check": "<polyline points=\"20 6 9 17 4 12\"/>", "X": "<line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"/><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"/>", "Plus": "<line x1=\"12\" y1=\"5\" x2=\"12\" y2=\"19\"/><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/>", "Copy": "<rect x=\"9\" y=\"9\" width=\"13\" height=\"13\" rx=\"2\"/><path d=\"M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\"/>", "Download": "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/>", "Upload": "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"17 8 12 3 7 8\"/><line x1=\"12\" y1=\"3\" x2=\"12\" y2=\"15\"/>", "RefreshCw": "<polyline points=\"23 4 23 10 17 10\"/><polyline points=\"1 20 1 14 7 14\"/><path d=\"M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15\"/>", "AlertTriangle": "<path d=\"M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z\"/><line x1=\"12\" y1=\"9\" x2=\"12\" y2=\"13\"/><line x1=\"12\" y1=\"17\" x2=\"12.01\" y2=\"17\"/>", "Settings": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z\"/>", "FileText": "<path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"/><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"/><line x1=\"10\" y1=\"9\" x2=\"8\" y2=\"9\"/>", "PenLine": "<path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z\"/>", "Archive": "<rect x=\"2\" y=\"3\" width=\"20\" height=\"5\" rx=\"1\"/><path d=\"M4 8v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8\"/><line x1=\"10\" y1=\"12\" x2=\"14\" y2=\"12\"/>", "History": "<path d=\"M3 3v5h5\"/><path d=\"M3.05 13A9 9 0 1 0 6 5.3L3 8\"/><polyline points=\"12 7 12 12 15 15\"/>", "RotateCcw": "<polyline points=\"1 4 1 10 7 10\"/><path d=\"M3.51 15a9 9 0 1 0 2.13-9.36L1 10\"/>", "Trash2": "<polyline points=\"3 6 5 6 21 6\"/><path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"/><line x1=\"10\" y1=\"11\" x2=\"10\" y2=\"17\"/><line x1=\"14\" y1=\"11\" x2=\"14\" y2=\"17\"/>", "Inbox": "<polyline points=\"22 12 16 12 14 15 10 15 8 12 2 12\"/><path d=\"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z\"/>", "ChevronDown": "<polyline points=\"6 9 12 15 18 9\"/>", "ChevronRight": "<polyline points=\"9 18 15 12 9 6\"/>", "LayoutGrid": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/>", "Calendar": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"/><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"/><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"/><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"/>", "ClipboardList": "<rect x=\"8\" y=\"2\" width=\"8\" height=\"4\" rx=\"1\" ry=\"1\"/><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"/><line x1=\"8\" y1=\"11\" x2=\"16\" y2=\"11\"/><line x1=\"8\" y1=\"15\" x2=\"14\" y2=\"15\"/>", "_fallback": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/>" };
+const ICONS = { "Check": "<polyline points=\"20 6 9 17 4 12\"/>", "X": "<line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"/><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"/>", "Plus": "<line x1=\"12\" y1=\"5\" x2=\"12\" y2=\"19\"/><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/>", "Copy": "<rect x=\"9\" y=\"9\" width=\"13\" height=\"13\" rx=\"2\"/><path d=\"M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\"/>", "Download": "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/>", "Upload": "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"17 8 12 3 7 8\"/><line x1=\"12\" y1=\"3\" x2=\"12\" y2=\"15\"/>", "RefreshCw": "<polyline points=\"23 4 23 10 17 10\"/><polyline points=\"1 20 1 14 7 14\"/><path d=\"M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15\"/>", "AlertTriangle": "<path d=\"M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z\"/><line x1=\"12\" y1=\"9\" x2=\"12\" y2=\"13\"/><line x1=\"12\" y1=\"17\" x2=\"12.01\" y2=\"17\"/>", "Settings": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z\"/>", "FileText": "<path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"/><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"/><line x1=\"10\" y1=\"9\" x2=\"8\" y2=\"9\"/>", "PenLine": "<path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z\"/>", "Archive": "<rect x=\"2\" y=\"3\" width=\"20\" height=\"5\" rx=\"1\"/><path d=\"M4 8v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8\"/><line x1=\"10\" y1=\"12\" x2=\"14\" y2=\"12\"/>", "History": "<path d=\"M3 3v5h5\"/><path d=\"M3.05 13A9 9 0 1 0 6 5.3L3 8\"/><polyline points=\"12 7 12 12 15 15\"/>", "RotateCcw": "<polyline points=\"1 4 1 10 7 10\"/><path d=\"M3.51 15a9 9 0 1 0 2.13-9.36L1 10\"/>", "Trash2": "<polyline points=\"3 6 5 6 21 6\"/><path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"/><line x1=\"10\" y1=\"11\" x2=\"10\" y2=\"17\"/><line x1=\"14\" y1=\"11\" x2=\"14\" y2=\"17\"/>", "Inbox": "<polyline points=\"22 12 16 12 14 15 10 15 8 12 2 12\"/><path d=\"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z\"/>", "ChevronDown": "<polyline points=\"6 9 12 15 18 9\"/>", "ChevronRight": "<polyline points=\"9 18 15 12 9 6\"/>", "LayoutGrid": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/>", "Calendar": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"/><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"/><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"/><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"/>", "_fallback": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/>" };
 const mkIcon = (name) => (props) => {
     const p = props || {};
     const size = p.size || 16;
@@ -70,7 +70,6 @@ const Trash2 = mkIcon("Trash2");
 const Inbox = mkIcon("Inbox");
 const LayoutGrid = mkIcon("LayoutGrid");
 const Calendar = mkIcon("Calendar");
-const ClipboardList = mkIcon("ClipboardList");
 // =====================================================================
 // CRM 표준서식 조립 툴 v0.3 — INTA
 // 반영: 추천안 v1(목적 12 + 공통옵션 + 기타함), 엔진/설정 분리,
@@ -1273,9 +1272,7 @@ async function ensureCilfSeed() {
 function AiBriefing({ onOpenCilf, onWriteLetter }) {
     const [meetings, setMeetings] = useState([]);
     const [ready, setReady] = useState(false);
-    const [collapsed, setCollapsed] = useState(() => {   // 미팅 접기 (상태 기억)
-        try { const v = localStorage.getItem("st:ai_collapsed"); return v ? JSON.parse(v) : {}; } catch (e) { return {}; }
-    });
+    const [collapsed, setCollapsed] = useState({});   // 미팅 접기
     const [showDone, setShowDone] = useState(false);   // 완료·종료 표시
     const [shiftEdit, setShiftEdit] = useState(null);  // {mid, code}
 
@@ -1371,7 +1368,7 @@ function AiBriefing({ onOpenCilf, onWriteLetter }) {
                 const head = aiDdayColor(urgent === 9999 ? null : urgent);
                 return React.createElement("div", { key: m.id, className: "bg-white border border-gray-200 rounded overflow-hidden" },
                     // 미팅 헤더
-                    React.createElement("div", { onClick: () => setCollapsed((x) => { const next = { ...x, [m.id]: open }; try { window.storage && window.storage.set("ai_collapsed", JSON.stringify(next)); } catch (e) {} return next; }), className: "flex items-center gap-2 px-3 py-2 cursor-pointer", style: { background: "#f8fafc", borderBottom: open ? "1px solid #eef1f5" : "none" } },
+                    React.createElement("div", { onClick: () => setCollapsed((x) => ({ ...x, [m.id]: open })), className: "flex items-center gap-2 px-3 py-2 cursor-pointer", style: { background: "#f8fafc", borderBottom: open ? "1px solid #eef1f5" : "none" } },
                         React.createElement("span", { style: { color: "#94a3b8", fontSize: 11 } }, open ? "▼" : "▸"),
                         React.createElement("span", { className: "text-sm font-semibold" }, m.visit),
                         m.demo && React.createElement("span", { className: "text-xs px-1.5 py-0.5 rounded", style: { background: "#fef3c7", color: "#b45309" } }, "예시"),
@@ -1776,77 +1773,6 @@ function CilfMaster({ onWriteLetter, onAiSummary, navTarget, onNavConsumed }) {
                 React.createElement("div", { className: "flex justify-end gap-2" },
                     React.createElement("button", { onClick: () => setAsk(null), className: "px-3 py-1.5 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-50" }, "아니요"),
                     React.createElement("button", { onClick: () => { ask.onYes && ask.onYes(); setAsk(null); }, className: "px-3 py-1.5 rounded text-white text-sm bg-red-600 hover:bg-red-700" }, "네")))));
-}
-
-// =====================================================================
-// 매니저 — 출장 스케줄표 작성 (레터 오른쪽 탭)
-//  기간을 정하면 날짜별 스케줄 표를 만들어 편집·저장. 저장: window.storage "manager_trip"
-// =====================================================================
-function Manager() {
-    const loadTrip = () => { try { const v = localStorage.getItem("st:manager_trip"); return v ? JSON.parse(v) : null; } catch (e) { return null; } };
-    const [trip, setTrip] = useState(() => loadTrip() || { name: "2026 일본 출장", start: "2026-10-19", end: "2026-10-23", days: {} });
-    const save = (t) => { setTrip(t); try { window.storage && window.storage.set("manager_trip", JSON.stringify(t)); } catch (e) { } };
-    const up = (patch) => save(Object.assign({}, trip, patch));
-    const dates = useMemo(() => {
-        const out = [];
-        try {
-            const s = new Date(trip.start + "T00:00:00"), e = new Date(trip.end + "T00:00:00");
-            if (isNaN(s.getTime()) || isNaN(e.getTime()) || e < s) return [];
-            let guard = 0;
-            for (const d = new Date(s); d <= e && guard < 60; d.setDate(d.getDate() + 1), guard++) out.push(d.toISOString().slice(0, 10));
-        } catch (err) { }
-        return out;
-    }, [trip.start, trip.end]);
-    const WD = ["일", "월", "화", "수", "목", "금", "토"];
-    const dayLabel = (ds) => { const d = new Date(ds + "T00:00:00"); return (d.getMonth() + 1) + "/" + d.getDate() + " (" + WD[d.getDay()] + ")"; };
-    const rowsOf = (ds) => (trip.days && trip.days[ds]) || [];
-    const setRows = (ds, rows) => { const days = Object.assign({}, trip.days); days[ds] = rows; up({ days: days }); };
-    const blankRow = () => ({ time: "", type: "미팅", who: "all", place: "", addr: "", move: "", status: "", gift: "", material: "", etc: "" });
-    const addRow = (ds) => setRows(ds, [...rowsOf(ds), blankRow()]);
-    const delRow = (ds, i) => setRows(ds, rowsOf(ds).filter((_, j) => j !== i));
-    const editRow = (ds, i, f, v) => setRows(ds, rowsOf(ds).map((r, j) => j === i ? Object.assign({}, r, { [f]: v }) : r));
-    const TYPES = ["미팅", "숙소", "체크인", "도시간이동", "귀국", ""];
-    const STATUS = ["", "[확정]", "[보류]"];
-    const cIn = (v, on) => React.createElement("input", { value: v || "", onChange: (e) => on(e.target.value), className: "border rounded px-1 py-0.5 text-xs", style: { borderColor: "#e2e8f0", width: "100%" } });
-    const cSel = (v, on, opts) => React.createElement("select", { value: v || "", onChange: (e) => on(e.target.value), className: "border rounded px-1 py-0.5 text-xs", style: { borderColor: "#e2e8f0", width: "100%" } }, opts.map((o) => React.createElement("option", { key: o, value: o }, o || "—")));
-    const cArea = (v, on) => React.createElement("textarea", { value: v || "", onChange: (e) => on(e.target.value), rows: 2, className: "border rounded px-1 py-0.5 text-xs", style: { borderColor: "#e2e8f0", width: "100%", resize: "vertical", lineHeight: 1.3 } });
-    const COLS = [["시간", 60], ["유형", 74], ["참석자", 52], ["방문지 및 담당자", 200], ["주소", 175], ["이동방법", 175], ["현황", 66], ["선물", 84], ["미팅자료", 165], ["기타", 175], ["", 26]];
-    return React.createElement("div", { className: "space-y-3" },
-        React.createElement("div", { className: "bg-white border border-gray-200 rounded p-3 flex items-center gap-2 flex-wrap" },
-            React.createElement(ClipboardList, { size: 16, className: "text-blue-600" }),
-            React.createElement("span", { className: "text-sm font-semibold" }, "출장 매니저 · 미팅상세스케줄표"),
-            React.createElement("span", { style: { flex: 1 } }),
-            React.createElement("input", { value: trip.name, onChange: (e) => up({ name: e.target.value }), placeholder: "출장명", className: "border rounded px-1.5 py-1 text-xs", style: { borderColor: "#e2e8f0", width: 180 } }),
-            React.createElement("input", { type: "date", value: trip.start, onChange: (e) => up({ start: e.target.value }), className: "border rounded px-1.5 py-1 text-xs", style: { borderColor: "#e2e8f0" } }),
-            React.createElement("span", { className: "text-xs text-gray-400" }, "~"),
-            React.createElement("input", { type: "date", value: trip.end, onChange: (e) => up({ end: e.target.value }), className: "border rounded px-1.5 py-1 text-xs", style: { borderColor: "#e2e8f0" } }),
-            React.createElement("span", { className: "text-xs text-gray-400" }, dates.length ? dates.length + "일" : "기간 확인"),
-            React.createElement("button", { onClick: () => window.print(), className: "text-xs px-2 py-1 rounded border border-gray-300 bg-white text-gray-600 hover:bg-gray-50" }, "인쇄")),
-        dates.length === 0 ? React.createElement("div", { className: "text-xs text-gray-400 p-6 text-center bg-white border border-gray-200 rounded" }, "시작일·종료일을 확인해 주세요.")
-            : dates.map((ds) => React.createElement("div", { key: ds, className: "bg-white border border-gray-200 rounded overflow-hidden" },
-                React.createElement("div", { className: "flex items-center gap-2 px-3 py-2", style: { background: "#f8fafc", borderBottom: "1px solid #eef1f5" } },
-                    React.createElement("span", { className: "text-sm font-semibold" }, dayLabel(ds)),
-                    React.createElement("span", { style: { flex: 1 } }),
-                    React.createElement("button", { onClick: () => addRow(ds), className: "text-xs px-2 py-1 rounded bg-blue-600 text-white" }, "+ 행 추가")),
-                React.createElement("div", { style: { overflowX: "auto" } },
-                    React.createElement("table", { style: { borderCollapse: "collapse", fontSize: 11, minWidth: 1180 } },
-                        React.createElement("thead", null, React.createElement("tr", { style: { color: "#94a3b8", textAlign: "left", background: "#fbfcfe" } },
-                            COLS.map((c, k) => React.createElement("th", { key: k, style: { padding: "4px 6px", fontWeight: 500, minWidth: c[1] } }, c[0])))),
-                        React.createElement("tbody", null,
-                            rowsOf(ds).length === 0 ? React.createElement("tr", null, React.createElement("td", { colSpan: COLS.length, style: { padding: "8px 10px", color: "#cbd5e1" } }, "'+ 행 추가'로 이 날의 일정을 넣으세요."))
-                                : rowsOf(ds).map((r, i) => React.createElement("tr", { key: i, style: { borderTop: "1px solid #f1f5f9", verticalAlign: "top" } },
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cIn(r.time, (v) => editRow(ds, i, "time", v))),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cSel(r.type, (v) => editRow(ds, i, "type", v), TYPES)),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cIn(r.who, (v) => editRow(ds, i, "who", v))),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cArea(r.place, (v) => editRow(ds, i, "place", v))),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cArea(r.addr, (v) => editRow(ds, i, "addr", v))),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cArea(r.move, (v) => editRow(ds, i, "move", v))),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cSel(r.status, (v) => editRow(ds, i, "status", v), STATUS)),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cIn(r.gift, (v) => editRow(ds, i, "gift", v))),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cArea(r.material, (v) => editRow(ds, i, "material", v))),
-                                    React.createElement("td", { style: { padding: "3px 4px" } }, cArea(r.etc, (v) => editRow(ds, i, "etc", v))),
-                                    React.createElement("td", { style: { padding: "3px 4px", textAlign: "center" } }, React.createElement("button", { onClick: () => delRow(ds, i), className: "text-gray-300 hover:text-red-500", title: "삭제" }, "×")))))))))
-    );
 }
 
 function App() {
@@ -3567,7 +3493,7 @@ p{margin:0;font-family:'Times New Roman','굴림',serif;font-size:11.0pt;}</styl
                 React.createElement("span", { className: "font-semibold" }, "CRM \uD45C\uC900\uC11C\uC2DD \uC870\uB9BD \uD234"),
                 React.createElement("span", { className: "text-xs text-gray-400" }, "v0.3 \u00B7 INTA"),
                 React.createElement("span", { className: "text-xs px-1.5 py-0.5 rounded", style: { background: "#eef2ff", color: "#4338ca", fontFamily: "ui-monospace, monospace" }, title: "\uBE4C\uB4DC \uBC88\uD638 \u2014 \uBC30\uD3EC\uB41C \uBC84\uC804 \uD655\uC778\uC6A9" }, "build 0715-b3")),
-            React.createElement("div", { className: "flex items-center gap-1 bg-white border border-gray-200 rounded p-0.5", style: { position: "absolute", left: "50%", transform: "translateX(-50%)" } }, [["대시보드", LayoutGrid, "AI비서"], ["캘린더", Calendar, "캘린더"], ["CILF", Archive, "CILF"], ["쓰기", PenLine, "레터"], ["매니저", ClipboardList, "매니저"]].map(([m, Icon, label]) => (React.createElement("button", { key: m, onClick: () => { if (m !== "CILF") setCilfCtx(null); setMode(m); }, className: `text-sm px-3 py-1 rounded flex items-center gap-1 ${((m === "대시보드" && mode === "대시보드") || (m === "캘린더" && mode === "캘린더") || (m === "CILF" && (mode === "CILF" || cilfCtx)) || (m === "쓰기" && (mode === "쓰기" || mode === "스튜디오") && !cilfCtx) || (m === "매니저" && mode === "매니저")) ? "bg-blue-600 text-white" : "text-gray-600 hover:bg-gray-100"}` },
+            React.createElement("div", { className: "flex items-center gap-1 bg-white border border-gray-200 rounded p-0.5", style: { position: "absolute", left: "50%", transform: "translateX(-50%)" } }, [["대시보드", LayoutGrid, "AI비서"], ["캘린더", Calendar, "캘린더"], ["CILF", Archive, "CILF"], ["쓰기", PenLine, "레터"]].map(([m, Icon, label]) => (React.createElement("button", { key: m, onClick: () => { if (m !== "CILF") setCilfCtx(null); setMode(m); }, className: `text-sm px-3 py-1 rounded flex items-center gap-1 ${((m === "대시보드" && mode === "대시보드") || (m === "캘린더" && mode === "캘린더") || (m === "CILF" && (mode === "CILF" || cilfCtx)) || (m === "쓰기" && (mode === "쓰기" || mode === "스튜디오") && !cilfCtx)) ? "bg-blue-600 text-white" : "text-gray-600 hover:bg-gray-100"}` },
                 React.createElement(Icon, { size: 14 }),
                 " ",
                 label)))),
@@ -3578,7 +3504,6 @@ p{margin:0;font-family:'Times New Roman','굴림',serif;font-size:11.0pt;}</styl
         mode === "캘린더" ? React.createElement("div", { className: "space-y-3" },
             React.createElement(AiBriefing, { onOpenCilf: () => setMode("CILF"), onWriteLetter: openCilfLetter }),
             React.createElement("iframe", { key: "iframe-calendar", src: "./dashboard.html#calendar", title: "캘린더", allow: "clipboard-read; clipboard-write", style: { width: "100%", height: "calc(100vh - 84px)", border: "0.5px solid #e5e7eb", borderRadius: 10, background: "#fff", display: "block" } })) :
-        mode === "매니저" ? React.createElement(Manager) :
         mode === "CILF" ? React.createElement(CilfMaster, { onWriteLetter: openCilfLetter, onAiSummary: aiSummarizeLtr, navTarget: cilfNav, onNavConsumed: () => setCilfNav(null) }) :
         mode === "AI 비서" ? React.createElement(AiBriefing, { onOpenCilf: () => setMode("CILF"), onWriteLetter: openCilfLetter }) 
         : mode === "쓰기" ? (React.createElement("div", { className: "space-y-3" },
